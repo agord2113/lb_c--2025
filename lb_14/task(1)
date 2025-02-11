@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    std::srand(std::time(nullptr)); // Ініціалізація генератора випадкових чисел
+
+    int size = 10; // Розмір масиву
+    double* arr = new double[size]; // Виділення пам'яті для динамічного масиву
+
+    // Заповнення масиву випадковими значеннями з діапазону (-2, 2)
+    for (int i = 0; i < size; i++) {
+        arr[i] = -2.0 + static_cast<double>(rand()) / RAND_MAX * 4.0;
+    }
+
+    int positiveCount = 0, negativeCount = 0;
+
+    // Виведення масиву і підрахунок додатних та від'ємних чисел
+    std::cout << "Масив: ";
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
+        if (arr[i] > 0) {
+            positiveCount++;
+        } else if (arr[i] < 0) {
+            negativeCount++;
+        }
+    }
+    std::cout << std::endl;
+
+    std::cout << "Кількість додатних чисел: " << positiveCount << std::endl;
+    std::cout << "Кількість від'ємних чисел: " << negativeCount << std::endl;
+
+    delete[] arr; // Звільнення пам'яті
+    return 0;
+}
