@@ -3,14 +3,14 @@ using namespace std;
 
 bool isPrime(int num) {
     if (num <= 1) {
-        return false; // Числа менші або рівні 1 не є простими
+        return false; // Числа менше або рівні 1 не є простими
     }
-    for (int i = 2; i * i <= num; i++) {
+    for (int i = 2; i * i <= num; ++i) { // Перевіряємо до кореня з числа
         if (num % i == 0) {
             return false; // Якщо число ділиться на i, воно не просте
         }
     }
-    return true; // Якщо жоден дільник не знайдений, число просте
+    return true; // Якщо не знайшли дільника, то число просте
 }
 
 int main() {
