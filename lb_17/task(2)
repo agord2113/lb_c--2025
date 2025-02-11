@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false; // Числа менше або рівні 1 не є простими
+    }
+    for (int i = 2; i * i <= num; ++i) { // Перевіряємо до кореня з числа
+        if (num % i == 0) {
+            return false; // Якщо число ділиться на i, воно не просте
+        }
+    }
+    return true; // Якщо не знайшли дільника, то число просте
+}
+
+int main(void) {
+    for (int i = 0; i <= 21; i++) {
+        if (isPrime(i)) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+    return 0;
+}
