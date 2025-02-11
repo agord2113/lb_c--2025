@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false; // Числа менші або рівні 1 не є простими
+    }
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false; // Якщо число ділиться на i, воно не просте
+        }
+    }
+    return true; // Якщо жоден дільник не знайдений, число просте
+}
+
+int main() {
+    int number;
+    cout << "Введіть число: ";
+    cin >> number;
+
+    if (isPrime(number)) {
+        cout << number << " є простим числом." << endl;
+    } else {
+        cout << number << " не є простим числом." << endl;
+    }
+
+    return 0;
+}
