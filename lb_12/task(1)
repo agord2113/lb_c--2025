@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void) {
+    int vector[] = { 3, -5, 7, 10, -4, 14, 5, 2, -13 };
+    int n = sizeof(vector) / sizeof(vector[0]);
+
+    int *ptr = vector;  // Вказівник на перший елемент масиву
+    int *minPtr = vector;  // Вказівник на мінімальний елемент
+
+    for (int *p = vector + 1; p < vector + n; ++p) {
+        if (*p < *minPtr) {
+            minPtr = p;  // Оновлюємо вказівник на мінімальний елемент
+        }
+    }
+
+    cout << "Найменший елемент масиву: " << *minPtr << endl;
+    return 0;
+}
