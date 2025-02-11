@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+// Перевантажена функція increment для одного аргументу
+void increment(int& var) {
+    var += 1;
+}
+
+// Перевантажена функція increment для двох аргументів
+void increment(int& var, int val) {
+    var += val;
+}
+
+int main(void) {
+    int var = 0;
+    for(int i = 0; i < 10; i++) {
+        if(i % 2) 
+            increment(var); // викликається версія з одним аргументом
+        else
+            increment(var, i); // викликається версія з двома аргументами
+    }
+    cout << var << endl; // Виведення результату
+    return 0;
+}
