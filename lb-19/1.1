@@ -1,1 +1,47 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <unordered_map>
+
+int main() {
+    std::string values, templateText;
+    std::getline(std::cin, values);
+    std::getline(std::cin, templateText);
+    
+    std::unordered_map<std::string, std::string> replacements;
+    std::stringstream ss(values);
+    std::string pair;
+    
+    while (std::getline(ss, pair, ',')) {
+        size_t pos = pair.find('=');
+        if (pos != std::string::npos) {
+            std::string key = pair.substr(0, pos);
+            std::string value = pair.substr(pos + 1);
+            replacements[key] = value;
+        }
+    }
+    
+    std::string result;
+    for (size_t i = 0; i < templateText.length(); ++i) {
+        if (templateText[i] == '[') {
+            size_t endPos = templateText.find(']', i);
+            if (endPos != std::string::npos) {
+                std::string key = templateText.substr(i + 1, endPos - i - 1);
+                if (replacements.count(key)) {
+                    result += replacements[key];
+                } else {
+                    result += "[" + key + "]"; 
+                }
+                i = endPos;
+            } else {
+                result += templateText[i];
+            }
+        } else {
+            result += templateText[i];
+        }
+    }
+    
+    std::cout << result << "\n";
+    return 0;
+}
 
