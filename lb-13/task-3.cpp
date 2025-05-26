@@ -1,11 +1,11 @@
 #include <iostream>
-#include <cstdlib> // for rand() and srand()
-#include <ctime>   // for time()
+#include <cstdlib> // генерує випадкове число (rand())
+#include <ctime>   // випадковість (srand(time(0)))
 
 using namespace std;
 
 int main() {
-    // Seed the random number generator
+    // Ініціалізація генератора випадкових чисел
     srand(time(0));
 
     // Define the dimensions of the 2D array
