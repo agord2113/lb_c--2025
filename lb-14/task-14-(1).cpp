@@ -1,6 +1,7 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <cstdlib> // генерує випадкове число (rand())
+#include <ctime> // випадковість (srand(time(0)))
+
 
 using namespace std;
 
