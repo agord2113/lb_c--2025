@@ -8,19 +8,19 @@ int main() {
     // Ініціалізація генератора випадкових чисел
     srand(time(0));
 
-    // Define the dimensions of the 2D array
+    //Визначте розміри двовимірного масиву
     const int ROWS = 5;
     const int COLS = 5;
     int matrix[ROWS][COLS];
 
-    // Populate the matrix with random numbers
+    // Заповнення матриці випадковими числами
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
-            *(*(matrix + i) + j) = rand() % 100; // Random numbers between 0 and 99
+            *(*(matrix + i) + j) = rand() % 100; // Випадкові числа від 0 до 99
         }
     }
 
-    // Print the matrix
+    // Роздрукування матриці
     cout << "Matrix:" << endl;
     for (int i = 0; i < ROWS; i++) {
         for (int j = 0; j < COLS; j++) {
@@ -29,21 +29,21 @@ int main() {
         cout << endl;
     }
 
-    // Print the main diagonal
+    // Виведення головної діагоналі
     cout << "Main Diagonal: ";
     for (int i = 0; i < ROWS; i++) {
         cout << *(*(matrix + i) + i) << " ";
     }
     cout << endl;
 
-    // Print the secondary diagonal
+    // Вививодимо вторинну діагональ
     cout << "Secondary Diagonal: ";
     for (int i = 0; i < ROWS; i++) {
         cout << *(*(matrix + i) + (COLS - 1 - i)) << " ";
     }
     cout << endl;
 
-    // Count even and odd elements
+    // Рахування парних та непарних елементів
     int evenCount = 0;
     int oddCount = 0;
     for (int i = 0; i < ROWS; i++) {
