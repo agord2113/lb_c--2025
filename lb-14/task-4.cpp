@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib> // For rand() and srand()
 #include <ctime>   // For time()
-#include <iomanip> // For setprecision()
+#include <iomanip> // Дозволяє форматувати вивід чисел
 
 using namespace std;
 
