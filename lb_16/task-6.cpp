@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ctime> // Для функцій часу та дати
+#include <ctime> // біліотека для часу та дати
 
 using namespace std;
 
