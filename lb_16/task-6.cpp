@@ -26,7 +26,7 @@ int main() {
     Date current = today();    // Отримання сьогоднішньої дати
 
     // Обчисліть дні з епохи для обох дат
-    tm bday_tm = {0, 0, 0, birthday.day, birthday.month - 1, birthday.year - 1900};
+    tm bday_tm = {0, 0, 0, birthday.day, birthday.month - 1, birthday.year - 1900};  // tm структура з <ctime>, яка містить дату й час у спеціальному форматі; time_t — це просто тип для часу в секундах.
     tm curr_tm = {0, 0, 0, current.day, current.month - 1, current.year - 1900};
 
     time_t bday_time = mktime(&bday_tm);
