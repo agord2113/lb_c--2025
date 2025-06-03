@@ -23,7 +23,7 @@ int main() {
     cout << "Enter your birthday (YYYY MM DD): ";
     cin >> birthday.year >> birthday.month >> birthday.day;
 
-    Date current = today();
+    Date current = today();    // Отримання сьогоднішньої дати
 
     // Обчисліть дні з епохи для обох дат
     tm bday_tm = {0, 0, 0, birthday.day, birthday.month - 1, birthday.year - 1900};
