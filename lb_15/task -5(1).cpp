@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector> // for using vector
+#include <vector> // для використання вектора
 using namespace std;
 
 bool isLeap(int year) { 
@@ -10,7 +10,7 @@ bool isLeap(int year) {
   }
 }
 
-// Solution using switch statement
+// Рішення з використанням оператора switch
 int monthLength(int year, int month) {
   switch (month) {
     case 1: case 3: case 5: case 7: case 8: case 10: case 12:
@@ -20,13 +20,13 @@ int monthLength(int year, int month) {
     case 2:
       return isLeap(year) ? 29 : 28;
     default:
-      return -1; // Indicate an error
+      return -1; // Вказати на помилку
   }
 }
 
-//Solution using vector
+//Розв'язання за допомогою вектора
 int monthLengthVector(int year, int month){
-    vector<int> daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; //index 0 is dummy
+    vector<int> daysInMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; //індекс 0 є фіктивним
     if (month == 2 && isLeap(year)) {
         return 29;
     } else {
