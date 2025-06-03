@@ -3,7 +3,7 @@
 
 using namespace std;
 
-struct Date {
+struct Date {  // контейнер  щоб зберігати дату (рік, місяць, день)
     int year;
     int month;
     int day;
