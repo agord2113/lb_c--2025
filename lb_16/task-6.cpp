@@ -1,5 +1,5 @@
 #include <iostream>
-#include <ctime> // For time and date functions
+#include <ctime> // Для функцій часу та дати
 
 using namespace std;
 
@@ -9,10 +9,10 @@ struct Date {
     int day;
 };
 
-// Function to get the current date
+// Функція для отримання поточної дати
 Date today() {
-    time_t t = time(0);   // Get current time
-    tm* now = localtime(&t); // Convert to local time
+    time_t t = time(0);   //Отримання поточний час
+    tm* now = localtime(&t); //Перетворення на місцевий час
 
     return {now->tm_year + 1900, now->tm_mon + 1, now->tm_mday};
 }
@@ -25,7 +25,7 @@ int main() {
 
     Date current = today();
 
-    // Calculate days since epoch for both dates
+    // Обчисліть дні з епохи для обох дат
     tm bday_tm = {0, 0, 0, birthday.day, birthday.month - 1, birthday.year - 1900};
     tm curr_tm = {0, 0, 0, current.day, current.month - 1, current.year - 1900};
 
@@ -38,7 +38,7 @@ int main() {
     }
 
     double diff_seconds = difftime(curr_time, bday_time);
-    long long diff_days = diff_seconds / (60 * 60 * 24); // Convert seconds to days
+    long long diff_days = diff_seconds / (60 * 60 * 24); //Перетворення секунд на дні
 
     cout << "Days between birthday and today: " << diff_days << endl;
 
